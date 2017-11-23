@@ -1,0 +1,5 @@
+1. I have no idea, i did not use the struct Contacts. I would like to see how it is implemented if possible. 
+
+2. The most difficult part was programming the functions to change the members in the structures Name, Address, Numbers.
+
+3. The milestone 4 took me a day to complete. 
