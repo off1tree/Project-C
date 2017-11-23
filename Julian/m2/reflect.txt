@@ -1,0 +1,9 @@
+1. It could be a bit more concise. For example, there seems to be a lot of prompts to 
+enter the name and addresses. Perhaps this can be condensed and they should ask for the
+whole name and address. Instead of asking for bits of addresses at a time, they could try
+to prompt for the whole address (at least the street name, number, and apartment, the 
+postal code and city can be separate).
+
+2. The value of 0 is also considered because it occupies the space of 0, it is an extra
+byte of space, and stores a null character and we have to include it so it can store
+26 characters.
