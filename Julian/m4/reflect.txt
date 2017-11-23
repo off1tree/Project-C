@@ -1,1 +1,5 @@
+1. 
 
+2. Applying functions and pointers to the names, address, and streets to get the code working properly.
+
+3. A very long time because figuring out the functions and pointers was not an easy task.
