@@ -1,9 +1,9 @@
 /* -------------------------------------------
-Name:
-Student number:
-Email:
-Section:
-Date:
+Name: James Li
+Student number: 107863177
+Email:jli488@myseneca.ca
+Section: IPC144-SWW
+Date: November 23, 2017
 ----------------------------------------------
 Assignment: 1
 Milestone:  4
