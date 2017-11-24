@@ -12,6 +12,7 @@ Milestone:  4
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include <string.h>
 
 // This source file needs to "know about" the structures you declared
 // in the header file before referring to those new types:
@@ -27,11 +28,22 @@ int main(void)
 {
     // Declare variables here:
 	
-	struct Name usrName = { '\0', '\0', '\0' };
-	struct Address usrAddress = { 0, '\0', 0, '\0', '\0' };
-	struct Numbers usrNumber = { '\0', '\0', '\0' };
-	
-	//struct Contacts contact;
+	struct Contacts info;
+
+	strcpy(info.name.firstName, "");
+	strcpy(info.name.middleInitial, "");
+	strcpy(info.name.lastName, "");
+
+	info.address.streetNumber = 0;
+	strcpy(info.address.street, "");
+	info.address.apartmentNumber = 0;
+	strcpy(info.address.postalCode, "");
+	strcpy(info.address.city, "");
+
+	strcpy(info.numbers.cell, "");
+	strcpy(info.numbers.home, "");
+	strcpy(info.numbers.business, "");
+
 
     // Create a variable of type Contact and call it something self-describing like "contact"
     // - HINT: Be sure to initialize the values to 0 and empty C strings
@@ -42,34 +54,34 @@ int main(void)
 	printf("-------------------------\n");
 
     // Call the Contact function getName to store the values for the Name member
-	getName(&usrName.firstName, &usrName.middleInitial, &usrName.lastName);
+	getName(&info.name.firstName, &info.name.middleInitial, &info.name.lastName);
 
     // Call the Contact function getAddress to store the values for the Address member
-	getAddress(&usrAddress.streetNumber, &usrAddress.street, &usrAddress.apartmentNumber, &usrAddress.postalCode, &usrAddress.city);
+	getAddress(&info.address.streetNumber, &info.address.street, &info.address.apartmentNumber, &info.address.postalCode, &info.address.city);
 
     // Call the Contact function getNumbers to store the values for the Numbers member
-	getNumbers(&usrNumber.cell, &usrNumber.home, &usrNumber.business);
+	getNumbers(&info.numbers.cell, &info.numbers.home, &info.numbers.business);
 
     // Display Contact summary details
 	printf("\nContact Details");
 	printf("\n---------------");
 
 	printf("\nName Details");
-	printf("\nFirst Name: %s", usrName.firstName);
-	printf("\nMiddle Initial(s): %s", usrName.middleInitial);
-	printf("\nLast Name: %s", usrName.lastName);
+	printf("\nFirst Name: %s", info.name.firstName);
+	printf("\nMiddle Initial(s): %s", info.name.middleInitial);
+	printf("\nLast Name: %s", info.name.lastName);
 	
 	printf("\n\nAddress Details");
-	printf("\nStreet number: %d", usrAddress.streetNumber);
-	printf("\nStreet name: %s", usrAddress.street);
-	printf("\nApartment: %d", usrAddress.apartmentNumber);
-	printf("\nPostal Code: %s", usrAddress.postalCode);
-	printf("\nCity: %s", usrAddress.city);
+	printf("\nStreet number: %d", info.address.streetNumber);
+	printf("\nStreet name: %s", info.address.street);
+	printf("\nApartment: %d", info.address.apartmentNumber);
+	printf("\nPostal Code: %s", info.address.postalCode);
+	printf("\nCity: %s", info.address.city);
 
 	printf("\n\nPhone Numbers:");
-	printf("\nCell phone number: %s", usrNumber.cell);
-	printf("\nHome phone number: %s", usrNumber.home);
-	printf("\nBusiness phone number: %s", usrNumber.business);
+	printf("\nCell phone number: %s", info.numbers.cell);
+	printf("\nHome phone number: %s", info.numbers.home);
+	printf("\nBusiness phone number: %s", info.numbers.business);
 	
     // Display Completion Message
     printf("\n\nStructure test for Contact using functions done!\n");
