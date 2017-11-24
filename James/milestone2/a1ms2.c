@@ -81,11 +81,11 @@ int main(void)
 	// Apartment Number - Optional
 	prompt[0] = 1;
 	do {
-		printf("Do you want to enter an apartment number (y or n): ");
+		printf("Do you want to enter an appartment number? (y or n): ");
 		scanf("%1s", prompt);
 
 		if (prompt[0] == 'y' || prompt[0] == 'Y') {
-			printf("Please enter the contact's apartment number: ");
+			printf("Please enter the contact's appartment number: ");
 			scanf("%d", &usrAddress.apartmentNumber);
 			prompt[0] = 0;
 		} else if (prompt[0] == 'n' || prompt[0] == 'N') {
@@ -108,7 +108,7 @@ int main(void)
 	// Cell number - Optional
 	prompt[0] = 1;
 	do {
-		printf("Do you want to enter a cell number (y or n): ");
+		printf("Do you want to enter a cell phone number? (y or n): ");
 		scanf("%1s", prompt);
 
 		if (prompt[0] == 'y' || prompt[0] == 'Y') {
@@ -125,7 +125,7 @@ int main(void)
 	// Home number - Optional
 	prompt[0] = 1;
 	do {
-		printf("Do you want to enter a home number (y or n): ");
+		printf("Do you want to enter a home phone number? (y or n): ");
 		scanf("%1s", prompt);
 
 		if (prompt[0] == 'y' || prompt[0] == 'Y') {
@@ -143,7 +143,7 @@ int main(void)
 	// Business number - Optional
 	prompt[0] = 1;
 	do {
-		printf("Do you want to enter a business number (y or n): ");
+		printf("Do you want to enter a business phone number? (y or n): ");
 		scanf("%1s", prompt);
 
 		if (prompt[0] == 'y' || prompt[0] == 'Y') {
@@ -163,15 +163,15 @@ int main(void)
 	printf("\n---------------");
 	
 	printf("\nName Details");
-	printf("\nFirst Name: %s", usrName.firstName);
-	printf("\nMiddle Initial(s): %s", usrName.middleInitial);
-	printf("\nLast Name: %s", usrName.lastName);
+	printf("\nFirst name: %s", usrName.firstName);
+	printf("\nMiddle initial(s): %s", usrName.middleInitial);
+	printf("\nLast name: %s", usrName.lastName);
 
 	printf("\n\nAddress Details");
 	printf("\nStreet number: %d", usrAddress.streetNumber);
 	printf("\nStreet name: %s", usrAddress.street);
 	printf("\nApartment: %d", usrAddress.apartmentNumber);
-	printf("\nPostal Code: %s", usrAddress.postalCode);
+	printf("\nPostal code: %s", usrAddress.postalCode);
 	printf("\nCity: %s", usrAddress.city);
 
 	printf("\n\nPhone Numbers:");
@@ -180,7 +180,7 @@ int main(void)
 	printf("\nBusiness phone number: %s", usrNumber.business);
 
 	// Display Completion Message
-	printf("\n\nStructure test for Name, Address, and Numbers Done!");
+	printf("\n\nStructure test for Name, Address, and Numbers Done!\n");
 
 	return 0;
 }
