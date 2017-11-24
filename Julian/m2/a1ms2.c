@@ -21,22 +21,22 @@ Milestone:  2
 
 #include "contacts.h"
 
-int main (void)
+int main(void)
 {
-    // Declare variables here:
-	struct Name userName = { '/0', '/0', '/0' };
-	struct Address userAddress = { 0, '/0', 0, '/0', '/0' };
-	struct Numbers userNumbers = { '/0', '/0', '/0' };
+	// Declare variables here:
+	struct Name userName; // = { '/0', '/0', '/0' };
+	struct Address userAddress; // = { 0, '/0', 0, '/0', '/0' };
+	struct Numbers userNumbers; // = { '/0', '/0', '/0' };
 
 	char yesorNo[2] = { 0 };
 
 
-    // Display the title
+	// Display the title
 	printf("Contact Management System\n");
 	printf("-------------------------\n");
 
 
-    // ========================Contact Name Input========================
+	// ========================Contact Name Input========================
 	// First Name
 	printf("Please enter the contact's first name: ");
 	scanf("%30s", userName.firstName);
@@ -60,7 +60,7 @@ int main (void)
 
 
 
-    // ========================Contact Address Input========================
+	// ========================Contact Address Input========================
 	// Street number
 	printf("Please enter the contact's street number: ");
 	scanf("%d", &userAddress.streetNumber);
@@ -72,11 +72,11 @@ int main (void)
 
 
 	// Apartment Number
-	printf("Do you want to enter an apartment number? (y or n): ");
+	printf("Do you want to enter an appartment number? (y or n): ");
 	scanf("%1s", yesorNo);
 
 	if (yesorNo[0] == 'y' || yesorNo[0] == 'Y') {
-		printf("Please enter the contact's apartment number: ");
+		printf("Please enter the contact's appartment number: ");
 		scanf("%d", &userAddress.apartmentNumber);
 	}
 
@@ -95,7 +95,7 @@ int main (void)
 
 
 
-    // ========================Contact Numbers Input========================
+	// ========================Contact Numbers Input========================
 	// Contact cell phone number
 	printf("Do you want to enter a cell phone number? (y or n): ");
 	scanf("%1s", yesorNo);
@@ -105,7 +105,7 @@ int main (void)
 		scanf("%20s", userNumbers.cell);
 	}
 
-    // Contact home phone number
+	// Contact home phone number
 	printf("Do you want to enter a home phone number? (y or n): ");
 	scanf("%1s", yesorNo);
 
@@ -125,7 +125,7 @@ int main (void)
 
 
 
-    // Display Contact Summary Details
+	// Display Contact Summary Details
 	// do the printf on the below statements
 
 	printf("\nContact Details");
@@ -142,22 +142,22 @@ int main (void)
 	printf("\nApartment: %d", userAddress.apartmentNumber);
 	printf("\nPostal code: %s", userAddress.postalCode);
 	printf("\nCity: %s", userAddress.city);
-	
+
 	printf("\n\nPhone Numbers:");
 	printf("\nCell phone number: %s", userNumbers.cell);
 	printf("\nHome phone number: %s", userNumbers.home);
 	printf("\nBusiness phone number: %s", userNumbers.business);
 
 
-    // Display Completion Message
+	// Display Completion Message
 	printf("\n\nStructure test for Name, Address, and Numbers Done!\n");
 
 
-    return 0;
+	return 0;
 }
 
 /*  SAMPLE OUTPUT:
-    
+
 Contact Management System
 -------------------------
 Please enter the contact's first name: Tom
@@ -176,25 +176,21 @@ Do you want to enter a home phone number? (y or n): Y
 Please enter the contact's home phone number: 705-222-7777
 Do you want to enter a business phone number? (y or n): Y
 Please enter the contact's business phone number: 416-333-8888
-
 Contact Details
 ---------------
 Name Details
 First name: Tom
 Middle initial(s): Wong
 Last name: Song
-
 Address Details
 Street number: 20
 Street name: Keele
 Apartment: 40
 Postal code: A8A 4J4
 City: Toronto
-
 Phone Numbers:
 Cell phone number: 905-111-6666
 Home phone number: 705-222-7777
 Business phone number: 416-333-8888
-
 Structure test for Name, Address, and Numbers Done!
 */
