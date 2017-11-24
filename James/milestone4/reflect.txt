@@ -2,4 +2,4 @@
 
 2. The most difficult part was programming the functions to change the members in the structures Name, Address, Numbers.
 
-3. The milestone 4 took me a day to complete. 
+3. The milestone 4 took a few days to complete. 
