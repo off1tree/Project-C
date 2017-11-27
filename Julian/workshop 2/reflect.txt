@@ -1,1 +1,17 @@
+1. The most important thing I learned is that you can use the modulus to calculate the cash register. This
+would show the remainder and help create the change needed for the pennies, nickels, etc. Learning to
+use the GST in the register was also useful. Identifying the different variables and knowing what each 
+variable does was also critical so that there are no mix ups when debugging the code. 
 
+2. It is used so the number will be rounded/truncated. Otherwise the number will be incorrect. This incorrect
+number shows up because the amount if multiplied without the 0.005 will be rounded downwards by the compiler
+and may give a different value and may not show up correctly on the register. 
+
+3. The amount left after the mathematical operations are shown. It shows the amount of loonies needed,
+and shows the remaining amount of money in decimal form. Then it goes to quarters and shows the remaining 
+amount, and so on. 
+
+4. It gives a more accurate way to present the change from the amount paid and the GST. The remainder is
+supposed to be shown when for example no more loonies are needed, and it moves down to the quarters,
+then dimes, nickels, and pennies. The formula also gives a truncated number so it would be better to use a
+modulus operator in the code.
