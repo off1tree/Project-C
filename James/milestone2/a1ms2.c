@@ -55,7 +55,7 @@ int main(void)
 			prompt[0] = 0;
 		}
 		// user skips
-		else if (prompt[0] == 'n' || prompt[0] == 'n') {
+		else if (prompt[0] == 'n' || prompt[0] == 'N') {
 			prompt[0] = 0;
 		}
 		// wrong option
