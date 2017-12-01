@@ -1,0 +1,3 @@
+﻿1. for, do while, while are the three iteration constructs. 
+2. do while loop always run the code once before checking the condition, the while loop checks the condition first before running the code. 
+3. conditional expressions is another way to assign a value to a variable, it is simple but limited to 1 condition and 2 results. 

@@ -1,0 +1,1 @@
+I have learned from this workshop how to create a C++ project and how to add a code file that uses the C compiler. I learned how to build and run my project using Visual Studio. I learned how to print text using the 'printf' function, how to add inline comments using '//' and multi-line comments using '/*' and '*/'

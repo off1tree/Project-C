@@ -1,0 +1,3 @@
+﻿1. One advantage of using an array of structs rather than parallel arrays is the less amount of code to be written. Instead of creating multiple arrays to store sets of information, we simply create one array of structs with the template we want and specify how many to create. 
+
+2. declaring a struct data type in a header file makes it accessable to all the source code that requires it. When we make changes to it, we only have to change it in one spot.

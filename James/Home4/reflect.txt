@@ -1,0 +1,3 @@
+﻿1. The arrays needs to be able to hold 10 elements because we expected a maximum of 10 days. 
+2. The advantages of using matching arrays makes values easy to manage since the index are the same for both arrays. 
+3. It was fairly challenging, there are many ways to get to the answer. I had to experiment using different kinds of loops to get to the answer. 

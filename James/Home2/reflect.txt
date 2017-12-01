@@ -1,0 +1,4 @@
+﻿The most important thing i learned from completing this workshop is the use of casting of variables to a different type. When a float type is cast to an integer type, only the whole number is stored, the rest are discarded. 
+The use of adding 0.005 is to correctly round the number when a float is cast into an integer and therefore losing the float-point precision. 
+Casting an operation will change the data type of the variable, discarding the data that is not stored by the new data type. 
+The modulus operator is used to store what is leftover from the expression. The purpose of this workshop is to learn how to use each operator, including the modulus operator. 
