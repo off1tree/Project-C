@@ -1,7 +1,6 @@
 /*
 Name: Hoh-il (Julian) Synn
 Student number: 142176163
-Email: jsynn@myseneca.ca
 Test 1
 Section: IPC144SWW
 Date: Dec 1, 2017
@@ -29,13 +28,12 @@ int main() {
 	int highestStudent = 0;
 	
 
-
 	for (y = 0; y < SIZE; y++) {
 	
 	printf("Student %d, enter student ID: ", y + 1);
 	scanf("%d", &section[y].number);
 
-	printf("Student %d, enter mark: ", y + 1);
+	printf("Student %d, enter mark:", y + 1);
 	scanf("%f", &section[y].mark);
 	}
 
@@ -54,7 +52,10 @@ int main() {
 	}
 	averageMark /= SIZE;
 
-	printf("The average for this section is: %f\n", averageMark);
+	printf("The average for this section is: %.2f\n", averageMark);
+
+
+
 
 	//the end
 	printf("CONGRATULATIONS!\n");
