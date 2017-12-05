@@ -3,7 +3,7 @@ Name: Julian Synn
 Student number: 142176163
 Email: jsynn@myseneca.ca
 Section: IPC144SWW
-Date: Nov 8, 2017
+Date: Nov 30, 2017
 ----------------------------------------------
 Assignment: 1
 Milestone:  4
@@ -69,5 +69,4 @@ void getAddress(struct Address *);
 // Get and store from standard input the values for Numbers
 // Place your code here...
 void getNumbers(struct Numbers *);
-
 
