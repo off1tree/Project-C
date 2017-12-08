@@ -1,3 +1,0 @@
-﻿1. We can ask if they would like to enter a middle initial and prompt for the whole name at once. Furthermore, the street number and name can be combined into one input. 
-
-2. There needs an extra byte to store an additional null character at the end of the string.
