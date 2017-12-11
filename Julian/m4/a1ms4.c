@@ -1,5 +1,5 @@
 /* -------------------------------------------
-Name: Julian Synn
+Name: Julian (Hoh-il) Synn
 Student number: 142176163
 Email: jsynn@myseneca.ca
 Section: IPC144SWW
@@ -13,7 +13,6 @@ Milestone:  4
 
 #include <stdio.h>
 
-
 // This source file needs to "know about" the structures you declared
 // in the header file before referring to those new types:
 // HINT: put the header file name in double quotes so the compiler knows
@@ -21,16 +20,10 @@ Milestone:  4
 // #include your contacts header file on the next line:
 #include "contacts.h"
 
-
 int main(void)
 {
 	// Declare variables here:
-
-	struct Contacts info;
-
-
-
-
+	struct Contacts contact;
 	// Create a variable of type Contact and call it something self-describing like "contact"
 	// - HINT: Be sure to initialize the values to 0 and empty C strings
 
@@ -40,40 +33,41 @@ int main(void)
 	printf("-------------------------\n");
 
 	// Call the Contact function getName to store the values for the Name member
-	getName(&info.name.firstName, &info.name.middleInitial, &info.name.lastName);
+	getName(&(contact.name));
 
-	// Call the Contact function getAddress to store the values for the Address member
-	getAddress(&info.address.streetNumber, &info.address.street, &info.address.apartmentNumber, &info.address.postalCode, &info.address.city);
-
+	//// Call the Contact function getAddress to store the values for the Address member
+	getAddress(&(contact.address));
 
 	// Call the Contact function getNumbers to store the values for the Numbers member
-	getNumbers(&info.numbers.cell, &info.numbers.home, &info.numbers.business);
+	getNumbers(&(contact.numbers));
 
-	// Display Contact summary details
+	//// Display Contact summary details
 	printf("\nContact Details");
 	printf("\n---------------");
 
 	printf("\nName Details");
-	printf("\nFirst Name: %s", info.name.firstName);
-	printf("\nMiddle Initial(s): %s", info.name.middleInitial);
-	printf("\nLast Name: %s", info.name.lastName);
+	printf("\nFirst name: %s", contact.name.firstName);
+	printf("\nMiddle initial(s): %s", contact.name.middleInitial);
+	printf("\nLast name: %s", contact.name.lastName);
 
 	printf("\n\nAddress Details");
-	printf("\nStreet number: %d", info.address.streetNumber);
-	printf("\nStreet name: %s", info.address.street);
-	printf("\nApartment: %d", info.address.apartmentNumber);
-	printf("\nPostal Code: %s", info.address.postalCode);
-	printf("\nCity: %s", info.address.city);
+	printf("\nStreet number: %d", contact.address.streetNumber);
+	printf("\nStreet name: %s", contact.address.street);
+	printf("\nApartment: %d", contact.address.apartmentNumber);
+	printf("\nPostal code: %s", contact.address.postalCode);
+	printf("\nCity: %s", contact.address.city);
 
 	printf("\n\nPhone Numbers:");
-	printf("\nCell phone number: %s", info.numbers.cell);
-	printf("\nHome phone number: %s", info.numbers.home);
-	printf("\nBusiness phone number: %s", info.numbers.business);
+	printf("\nCell phone number: %s", contact.numbers.cellnumber);
+	printf("\nHome phone number: %s", contact.numbers.homenumber);
+	printf("\nBusiness phone number: %s", contact.numbers.businessnumber);
+
 
 
 	// Display Completion Message
 	printf("\n\nStructure test for Contact using functions done!\n");
 
+	system("pause");
 	return 0;
 }
 
@@ -86,8 +80,8 @@ Please enter the contact's middle initial(s): Dino
 Please enter the contact's last name: Flintstone
 Please enter the contact's street number: 100
 Please enter the contact's street name: Bedrock
-Do you want to enter an appartment number? (y or n): y
-Please enter the contact's appartment number: 14
+Do you want to enter an apartment number? (y or n): y
+Please enter the contact's apartment number: 14
 Please enter the contact's postal code: Z8Z 7R7
 Please enter the contact's city: Markham
 Do you want to enter a cell phone number? (y or n): Y
