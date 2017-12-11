@@ -11,9 +11,9 @@ Milestone:  4
 
 // Structure type Name declaration (Milestone 1)
 struct Name {
-    char firstName[31];
-    char middleInitial[7];
-    char lastName[36];
+	char firstName[31];
+	char middleInitial[7];
+	char lastName[36];
 };
 
 // Structure type Address declaration 
@@ -33,9 +33,9 @@ struct Address {
 // Structure type Numbers declaration
 // Place your code here... (from Milestone 1)
 struct Numbers {
-	char cell[21];
-	char home[21];
-	char business[21];
+	char cellnumber[21];
+	char homenumber[21];
+	char businessnumber[21];
 };
 
 
@@ -69,4 +69,5 @@ void getAddress(struct Address *);
 // Get and store from standard input the values for Numbers
 // Place your code here...
 void getNumbers(struct Numbers *);
+#pragma once
 
