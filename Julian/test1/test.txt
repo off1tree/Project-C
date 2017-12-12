@@ -46,9 +46,10 @@ int main() {
 	y = 0;
 	for (y = 0; y < SIZE; y++){
 		averageMark += section[y].mark;
-		if (section[y].mark > highestMark)
+		if (section[y].mark > highestMark){
 			highestMark = section[y].mark;
 			highestStudent = section[y].number;
+			}
 	}
 	averageMark /= SIZE;
 
