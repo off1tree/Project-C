@@ -39,7 +39,7 @@ Milestone:  2
 // Clear the standard input buffer
 void clearKeyboard(void)
 {
-    while (getchar() != '\n')   ; // empty execution code block on purpose
+	while (getchar() != '\n'); // empty execution code block on purpose
 }
 
 // pause: Empty function definition goes here:
@@ -47,7 +47,7 @@ void pause(void)
 {
 	printf("(Press Enter to continue)");
 	clearKeyboard();      //clearkeyboard function
-	
+
 }
 
 
@@ -56,7 +56,7 @@ int getInt(void)
 {
 	char NL = 'x';
 	int value = 0;
-	
+
 	do {
 		scanf("%d%c", &value, &NL);
 		if (NL != '\n')
@@ -67,7 +67,7 @@ int getInt(void)
 
 	} while (NL != '\n');
 
-	
+
 	return value;
 }
 
@@ -79,10 +79,10 @@ int getIntInRange(int min, int max)
 	x = getInt();
 
 	while (x < min || x > max) {
-		
+
 		printf("*** OUT OF RANGE *** <Enter a number between %d and %d>: ", min, max);
 		x = getInt();
-	} 
+	}
 	return x;
 }
 
@@ -91,12 +91,12 @@ int getIntInRange(int min, int max)
 int yes(void)
 {
 	int result = -1;
-	
+
 	char c1;
 	char c2[10];
-	
+
 	do {
-		
+
 		c2[0] = 0;
 		c2[1] = 0;
 
@@ -104,23 +104,23 @@ int yes(void)
 		clearKeyboard();
 
 		if (c2[1] == 0) {
-				if (c2[0] == 'Y' || c2[0] == 'y') {
-					result = 1;
-				}
-				else {
-					result = 0;
-				}
+			if (c2[0] == 'Y' || c2[0] == 'y') {
+				result = 1;
+			}
+			else {
+				result = 0;
+			}
 		}
-	
+
 		if (result < 0) {
 			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
 
 		}
 
 	} while (result < 0);
-	
+
 	return result;
-	
+
 }
 
 
@@ -129,8 +129,6 @@ int menu(void)
 {
 	int option = 0;
 	int min = 0, max = 6;
-
-	do {
 
 	printf("Contact Management System\n");
 	printf("-------------------------\n");
@@ -142,7 +140,10 @@ int menu(void)
 	printf("6. Sort contacts by cell phone number\n");
 	printf("0. Exit\n");
 
-	} while (option != getIntInRange(min, max));
+	printf("\nSelect an option:> ");
+	option = getIntInRange(min, max);
+
+	return option;
 
 }
 
@@ -150,15 +151,51 @@ int menu(void)
 // ContactManagerSystem: Empty function definition goes here:
 void ContactManagerSystem(void)
 {
-	printf("<<< Feature 1 is unavailable >>>");
-	printf("<<< Feature 2 is unavailable >>>");
-	printf("<<< Feature 3 is unavailable >>>");
-	printf("<<< Feature 4 is unavailable >>>");
-	printf("<<< Feature 5 is unavailable >>>");
-	printf("<<< Feature 6 is unavailable >>>");
 
-	printf("Exit the program? (Y)es/(N)o: ");
+	{
+	int choice = menu();
+	int number;
+	
 
-	printf("Contact Management System: terminated");
+	switch (choice) {
+	case 1:
+		printf("<<< Feature 1 is unavailable >>>");
+		break;
 
+	case 2:
+		printf("<<< Feature 2 is unavailable >>>");
+		break;
+
+	case 3:
+		printf("<<< Feature 3 is unavailable >>>");
+		break;
+
+	case 4:
+		printf("<<< Feature 4 is unavailable >>>");
+		break;
+
+	case 5:
+		printf("<<< Feature 5 is unavailable >>>");
+		break;
+
+	case 6:
+		printf("<<< Feature 6 is unavailable >>>");
+		break;
+
+
+		// put if statement here
+	case 0:
+		printf("Exit the program? (Y)es/(N)o: ");
+
+	case 'Y':
+	case 'y':
+		printf("Contact Management System: terminated");
+		break;
+
+	case 'N':
+	case 'n':
+
+		break;
+		}
+	}
 }
