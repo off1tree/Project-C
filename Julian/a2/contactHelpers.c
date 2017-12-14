@@ -91,42 +91,35 @@ int getIntInRange(int min, int max)
 int yes(void)
 {
 	int result = -1;
+	
 	char c1;
-	char c2;
+	char c2[10];
 	
 	do {
-		scanf("%c%c", &c1, &c2);
 		
+		c2[0] = 0;
+		c2[1] = 0;
 
-		if (c2 == '\n') {
+		scanf("%[^\n]s", c2);
+		clearKeyboard();
 
-			if (c1 != 'Y' && c1 != 'y' && c1 != 'N' && c1 != 'n') {
-				printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
-
-			}
-
-			else {
-				if (c1 == 'Y' || c1 == 'y') {
+		if (c2[1] == 0) {
+				if (c2[0] == 'Y' || c2[0] == 'y') {
 					result = 1;
-
 				}
 				else {
 					result = 0;
 				}
-
-			}
+		}
+	
+		if (result < 0) {
+			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
 
 		}
-		else {
-			
 
-		}
-		
-
-	} while (result != 1 && result != 0);
-
-
-		return result;
+	} while (result < 0);
+	
+	return result;
 	
 }
 
