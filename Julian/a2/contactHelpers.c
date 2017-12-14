@@ -90,24 +90,43 @@ int getIntInRange(int min, int max)
 // yes: Empty function definition goes here:
 int yes(void)
 {
-	int y = 0;
-	char n = 0;
+	int result = -1;
+	char c1;
+	char c2;
 	
 	do {
-		scanf("%c", &n);
-		if (n != '\n'){
-			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
-			clearKeyboard();
-		}
-
-		else if (y != '\n'){
-			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
-			clearKeyboard();
-		}
-
-	} while (n != '\n');
-	
+		scanf("%c%c", &c1, &c2);
 		
+
+		if (c2 == '\n') {
+
+			if (c1 != 'Y' && c1 != 'y' && c1 != 'N' && c1 != 'n') {
+				printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
+
+			}
+
+			else {
+				if (c1 == 'Y' || c1 == 'y') {
+					result = 1;
+
+				}
+				else {
+					result = 0;
+				}
+
+			}
+
+		}
+		else {
+			
+
+		}
+		
+
+	} while (result != 1 && result != 0);
+
+
+		return result;
 	
 }
 
