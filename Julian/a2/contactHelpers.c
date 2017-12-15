@@ -153,49 +153,49 @@ void ContactManagerSystem(void)
 {
 
 	{
-	int choice = menu();
-	int number;
-	
+		int choice = menu();
+		int number = 0;
 
-	switch (choice) {
-	case 1:
-		printf("<<< Feature 1 is unavailable >>>");
-		break;
+		while (number == 0)
+			choice = menu();
 
-	case 2:
-		printf("<<< Feature 2 is unavailable >>>");
-		break;
+		switch (choice) {
+		case 1:
+			printf("<<< Feature 1 is unavailable >>>");
+			break;
 
-	case 3:
-		printf("<<< Feature 3 is unavailable >>>");
-		break;
+		case 2:
+			printf("<<< Feature 2 is unavailable >>>");
+			break;
 
-	case 4:
-		printf("<<< Feature 4 is unavailable >>>");
-		break;
+		case 3:
+			printf("<<< Feature 3 is unavailable >>>");
+			break;
 
-	case 5:
-		printf("<<< Feature 5 is unavailable >>>");
-		break;
+		case 4:
+			printf("<<< Feature 4 is unavailable >>>");
+			break;
 
-	case 6:
-		printf("<<< Feature 6 is unavailable >>>");
-		break;
+		case 5:
+			printf("<<< Feature 5 is unavailable >>>");
+			break;
+
+		case 6:
+			printf("<<< Feature 6 is unavailable >>>");
+			break;
 
 
-		// put if statement here
-	case 0:
-		printf("Exit the program? (Y)es/(N)o: ");
+			// put if statement here
+		case 0:
+			printf("Exit the program? (Y)es/(N)o: ");
 
-	case 'Y':
-	case 'y':
-		printf("Contact Management System: terminated");
-		break;
+		case 'Y':
+		case 'y':
+			printf("Contact Management System: terminated");
+			break;
 
-	case 'N':
-	case 'n':
-
-		break;
+		default:
+			break;
 		}
 	}
 }
