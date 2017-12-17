@@ -42,38 +42,59 @@ Milestone:  2
 
 // getName:
 void getName(struct Name *name) {
-	char ask[2] = { 0 };
 
+	int ask;
 
+	//firstn
 	printf("Please enter the contact's first name: ");
 	scanf("%30s", name->firstName);
 
+	//middlein
+	printf("Do you want to enter a middle initial(s)? (y or n): ");
+	ask = yes();
 
-	ask[0] = 1;
-	do {
+	if (ask == 1) {
+		printf("Please enter the contact's middle initial(s): ");
+		scanf("%6", name->middleInitial);
+	}
 
-
-		printf("Do you want to enter a middle initial(s)? (y or n): ");
-		scanf("%1s", ask);
-
-		if (ask[0] == 'y' || ask[0] == 'Y') {
-			printf("Please enter the contact's middle initial(s): ");
-			scanf("%6s", name->middleInitial);
-			ask[0] = 0;
-		}
-
-		else if (ask[0] == 'n' || ask[0] == 'N') {
-			ask[0] = 0;
-		}
-
-		else {
-			ask[0] = 1;
-		}
-	} while (ask[0]);
-
-
+	//lastn
 	printf("Please enter the contact's last name: ");
 	scanf("%35s", name->lastName);
+
+
+	//char ask[2] = { 0 };
+
+
+	//printf("Please enter the contact's first name: ");
+	//scanf("%30s", name->firstName);
+
+
+	//ask[0] = 1;
+	//do {
+
+
+	//	printf("Do you want to enter a middle initial(s)? (y or n): ");
+	//	scanf("%1s", ask);
+
+	//	if (ask[0] == 'y' || ask[0] == 'Y') {
+	//		printf("Please enter the contact's middle initial(s): ");
+	//		scanf("%6s", name->middleInitial);
+	//		ask[0] = 0;
+	//	}
+
+	//	else if (ask[0] == 'n' || ask[0] == 'N') {
+	//		ask[0] = 0;
+	//	}
+
+	//	else {
+	//		ask[0] = 1;
+	//	}
+	//} while (ask[0]);
+
+
+	//printf("Please enter the contact's last name: ");
+	//scanf("%35s", name->lastName);
 
 }
 
@@ -81,108 +102,143 @@ void getName(struct Name *name) {
 // getAddress:
 void getAddress(struct Address *address) {
 
-	char ask[2] = { 0 };
+	int ask;
 
+	//street num
 	printf("Please enter the contact's street number: ");
-	scanf("%d", &address->streetNumber);
-	//ampersand added because it's an integer. strings don't have ampersands.
+	address->streetNumber = getInt();
 
 	printf("Please enter the contact's street name: ");
 	scanf("%40s", address->street);
 
+	//apartment num
+	printf("Do you want to enter an apartment number? (y or n): ");
+	ask = yes();
+	if (ask == 1) {
+		printf("Please enter the contact's apartment number: ");
+		address->apartmentNumber = getInt();
+	}
 
-	ask[0] = 1;
-	do {
-		printf("Do you want to enter an apartment number? (y or n): ");
-		scanf("%1s", ask);
-
-		if (ask[0] == 'y' || ask[0] == 'Y') {
-			printf("Please enter the contact's apartment number: ");
-			scanf("%d", &address->apartmentNumber);
-			ask[0] = 0;
-		}
-		else if (ask[0] == 'n' || ask[0] == 'N') {
-			ask[0] = 0;
-		}
-		else {
-			ask[0] = 1;
-		}
-	} while (ask[0]);
-
-
+	//postal 
 	printf("Please enter the contact's postal code: ");
 	scanf(" %7[^\n]", address->postalCode);
 
-
+	//city
 	printf("Please enter the contact's city: ");
 	scanf("%40s", address->city);
 }
+
+//char ask[2] = { 0 };
+
+	//scanf("%d", &address->streetNumber);
+	//ampersand added because it's an integer. strings don't have ampersands.
+
+
+	//ask[0] = 1;
+	//do {
+		//scanf("%1s", ask);
+
+	//	if (ask[0] == 'y' || ask[0] == 'Y') {
+	//		printf("Please enter the contact's apartment number: ");
+	//		scanf("%d", &address->apartmentNumber);
+	//		ask[0] = 0;
+	//	}
+	//	else if (ask[0] == 'n' || ask[0] == 'N') {
+	//		ask[0] = 0;
+	//	}
+	//	else {
+	//		ask[0] = 1;
+	//	}
+	//} while (ask[0]);
+
+
 
 // getNumbers:
 // NOTE:  Also modify this function so the cell number is
 //        mandatory (don't ask to enter the cell number)
 void getNumbers(struct Numbers* numbers) {
-	char ask[2] = { 0 };
+
+	int ask;
+
+	printf("Please enter the contact's cell phone number: ");
+	scanf("%20s", numbers->cell);
+
+	//home num
+	printf("Do you want to enter a home phone number? (y or n): ");
+	ask == yes();
+	if (ask == 1) {
+		printf("Please enter the contact's home phone number: ");
+		scanf("%20s", numbers->home);
+	}
 
 
-	ask[0] = 1;
+	//business num
+	printf("Do you want to enter a business number? (y or n): ");
+	ask == yes();
+	if (ask == 1) {
+		printf("Please enter the contact's business phone number: ");
+		scanf("%20s", numbers->business);
+	}
+}
+	//char ask[2] = { 0 };
+
+
+	/*ask[0] = 1;*/
 	//do {
 	//	printf("Do you want to enter a cell phone number? (y or n): ");
 	//	scanf("%1s", ask);
 
 	//	if (ask[0] == 'y' || ask[0] == 'Y') {
-			printf("Please enter the contact's cell phone number: ");
-			scanf("%20s", numbers->cell);
-			ask[0] = 0;
-	/*	}
-		else if (ask[0] == 'n' || ask[0] == 'N') {
-			ask[0] = 0;
 
-		}
-		else {
-			ask[0] = 1;
-		}
+	/*ask[0] = 0;*/
+	/*	}
+	else if (ask[0] == 'n' || ask[0] == 'N') {
+	ask[0] = 0;
+	}
+	else {
+	ask[0] = 1;
+	}
 	} while (ask[0]);*/
 
 
-	ask[0] = 1;
-	do {
-		printf("Do you want to enter a home phone number? (y or n): ");
-		scanf("%1s", ask);
-
-		if (ask[0] == 'y' || ask[0] == 'Y') {
-			printf("Please enter the contact's home phone number: ");
-			scanf("%20s", numbers->home);
-			ask[0] = 0;
-		}
-		else if (ask[0] == 'n' || ask[0] == 'N') {
-			ask[0] = 0;
-		}
-		else {
-			ask[0] = 1;
-		}
-	} while (ask[0]);
-
-
-
-	ask[0] = 1;
-	do {
-		printf("Do you want to enter a business phone number? (y or n): ");
-		scanf("%1s", ask);
-
-		if (ask[0] == 'y' || ask[0] == 'Y') {
-			printf("Please enter the contact's business phone number: ");
-			scanf("%20s", numbers->business);
-			ask[0] = 0;
-		}
-		else if (ask[0] == 'n' || ask[0] == 'N') {
-			ask[0] = 0;
-		}
-		else {
-			ask[0] = 1;
-		}
-	} while (ask[0]);
-}
+//	ask[0] = 1;
+//	do {
+//		printf("Do you want to enter a home phone number? (y or n): ");
+//		scanf("%1s", ask);
+//
+//		if (ask[0] == 'y' || ask[0] == 'Y') {
+//			printf("Please enter the contact's home phone number: ");
+//			scanf("%20s", numbers->home);
+//			ask[0] = 0;
+//		}
+//		else if (ask[0] == 'n' || ask[0] == 'N') {
+//			ask[0] = 0;
+//		}
+//		else {
+//			ask[0] = 1;
+//		}
+//	} while (ask[0]);
+//
+//
+//
+//	ask[0] = 1;
+//	do {
+//		printf("Do you want to enter a business phone number? (y or n): ");
+//		scanf("%1s", ask);
+//
+//		if (ask[0] == 'y' || ask[0] == 'Y') {
+//			printf("Please enter the contact's business phone number: ");
+//			scanf("%20s", numbers->business);
+//			ask[0] = 0;
+//		}
+//		else if (ask[0] == 'n' || ask[0] == 'N') {
+//			ask[0] = 0;
+//		}
+//		else {
+//			ask[0] = 1;
+//		}
+//	} while (ask[0]);
+//}
 
 
 // +-------------------------------------------------+
@@ -194,6 +250,8 @@ void getNumbers(struct Numbers* numbers) {
 
 // getContact
 void getContact(struct Contact *contact) {
+	getName(&(contact->name));
+	getAddress(&(contact->address));
+	getNumbers(&(contact->numbers));
 
 }
-
