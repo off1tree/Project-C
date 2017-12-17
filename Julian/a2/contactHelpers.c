@@ -59,10 +59,10 @@ int getInt(void)
 
 	do {
 		scanf("%d%c", &value, &NL);
-		if (NL != '\n')
-		{
-			printf("*** INVALID INTEGER *** <Please enter an integer>: ");
+		if (NL != '\n') {
 			clearKeyboard();
+			printf("*** INVALID INTEGER *** <Please enter an integer>: ");
+			
 		}
 
 	} while (NL != '\n');
@@ -75,13 +75,16 @@ int getInt(void)
 // getIntInRange: Empty function definition goes here:
 int getIntInRange(int min, int max)
 {
-	int x = 0;
+	int x;
+
 	x = getInt();
 
 	while (x < min || x > max) {
-
-		printf("*** OUT OF RANGE *** <Enter a number between %d and %d>: ", min, max);
-		x = getInt();
+		if (x < min || x > max) {
+			printf("*** OUT OF RANGE *** <Enter a number between %d and %d>: ", min, max);
+			x = getInt();
+		}
+		
 	}
 	return x;
 }
@@ -90,36 +93,39 @@ int getIntInRange(int min, int max)
 // yes: Empty function definition goes here:
 int yes(void)
 {
-	int result = -1;
 
-	char c1;
-	char c2[10];
 
-	do {
 
-		c2[0] = 0;
-		c2[1] = 0;
+	//int result = -1;
 
-		scanf("%[^\n]s", c2);
-		clearKeyboard();
+	//char c1;
+	//char c2[10];
 
-		if (c2[1] == 0) {
-			if (c2[0] == 'Y' || c2[0] == 'y') {
-				result = 1;
-			}
-			else {
-				result = 0;
-			}
-		}
+	//do {
 
-		if (result < 0) {
-			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
+	//	c2[0] = 0;
+	//	c2[1] = 0;
 
-		}
+	//	scanf("%[^\n]s", c2);
+	//	clearKeyboard();
 
-	} while (result < 0);
+	//	if (c2[1] == 0) {
+	//		if (c2[0] == 'Y' || c2[0] == 'y') {
+	//			result = 1;
+	//		}
+	//		else {
+	//			result = 0;
+	//		}
+	//	}
 
-	return result;
+	//	if (result < 0) {
+	//		printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
+
+	//	}
+
+	//} while (result < 0);
+
+	//return result;
 
 }
 
@@ -128,7 +134,7 @@ int yes(void)
 int menu(void)
 {
 	int option = 0;
-	int min = 0, max = 6;
+	//int min = 0, max = 6;
 
 	printf("Contact Management System\n");
 	printf("-------------------------\n");
@@ -140,8 +146,9 @@ int menu(void)
 	printf("6. Sort contacts by cell phone number\n");
 	printf("0. Exit\n");
 
-	printf("\nSelect an option:> ");
-	option = getIntInRange(min, max);
+	printf("\n\nSelect an option:> ");
+	//option = getIntInRange(min, max);
+	option = getIntInRange(0, 6);
 
 	return option;
 
@@ -151,13 +158,15 @@ int menu(void)
 // ContactManagerSystem: Empty function definition goes here:
 void ContactManagerSystem(void)
 {
-
-	{
-		int choice = menu();
+		// number to leave
+		// choice to select
+		// = menu()
+		int choice;
 		int number = 0;
-
-		while (number == 0)
+		
+		while (number == 0) {
 			choice = menu();
+
 
 		switch (choice) {
 		case 1:
@@ -184,18 +193,23 @@ void ContactManagerSystem(void)
 			printf("<<< Feature 6 is unavailable >>>");
 			break;
 
-
-			// put if statement here
 		case 0:
-			printf("Exit the program? (Y)es/(N)o: ");
-
-		case 'Y':
-		case 'y':
-			printf("Contact Management System: terminated");
+			printf("\nExit the program? (Y)es/(N)o: ");
+			number = yes();
+			printf("\n");
+			if (number == 1) {
+				printf("Contact Management System: terminated\n");
+			}
 			break;
 
 		default:
 			break;
+	/*	case 'Y':
+		case 'y':
+			printf("Contact Management System: terminated");
+			break;*/
+
+		
 		}
 	}
 }
