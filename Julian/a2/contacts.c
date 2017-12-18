@@ -48,53 +48,23 @@ void getName(struct Name *name) {
 	//firstn
 	printf("Please enter the contact's first name: ");
 	scanf("%30s", name->firstName);
+	clearKeyboard();
 
 	//middlein
-	printf("\nDo you want to enter a middle initial(s)? (y or n): ");
+	printf("Do you want to enter a middle initial(s)? (y or n): ");
 	ask = yes();
 
 	if (ask == 1) {
-		printf("\nPlease enter the contact's middle initial(s): ");
-		scanf("%6", name->middleInitial);
+		printf("Please enter the contact's middle initial(s): ");
+		scanf("%6s", name->middleInitial);
 	}
 
 	//lastn
-	printf("\nPlease enter the contact's last name: ");
+	printf("Please enter the contact's last name: ");
 	scanf("%35s", name->lastName);
 
 
-	//char ask[2] = { 0 };
 
-
-	//printf("Please enter the contact's first name: ");
-	//scanf("%30s", name->firstName);
-
-
-	//ask[0] = 1;
-	//do {
-
-
-	//	printf("Do you want to enter a middle initial(s)? (y or n): ");
-	//	scanf("%1s", ask);
-
-	//	if (ask[0] == 'y' || ask[0] == 'Y') {
-	//		printf("Please enter the contact's middle initial(s): ");
-	//		scanf("%6s", name->middleInitial);
-	//		ask[0] = 0;
-	//	}
-
-	//	else if (ask[0] == 'n' || ask[0] == 'N') {
-	//		ask[0] = 0;
-	//	}
-
-	//	else {
-	//		ask[0] = 1;
-	//	}
-	//} while (ask[0]);
-
-
-	//printf("Please enter the contact's last name: ");
-	//scanf("%35s", name->lastName);
 
 }
 
@@ -109,47 +79,30 @@ void getAddress(struct Address *address) {
 	address->streetNumber = getInt();
 
 	printf("Please enter the contact's street name: ");
-	scanf("%40s", address->street);
+	scanf("%[^\n]s", address->street);
 
 	//apartment num
-	printf("\nDo you want to enter an apartment number? (y or n): ");
+	printf("Do you want to enter an apartment number? (y or n): ");
+	clearKeyboard();
 	ask = yes();
+
 	if (ask == 1) {
-		printf("\nPlease enter the contact's apartment number: ");
+		printf("Please enter the contact's apartment number: ");
 		address->apartmentNumber = getInt();
+		
+
 	}
 
 	//postal 
-	printf("\nPlease enter the contact's postal code: ");
+	printf("Please enter the contact's postal code: ");
 	scanf(" %7[^\n]", address->postalCode);
 
 	//city
-	printf("\nPlease enter the contact's city: ");
+	printf("Please enter the contact's city: ");
 	scanf("%40s", address->city);
 }
 
-//char ask[2] = { 0 };
 
-	//scanf("%d", &address->streetNumber);
-	//ampersand added because it's an integer. strings don't have ampersands.
-
-
-	//ask[0] = 1;
-	//do {
-		//scanf("%1s", ask);
-
-	//	if (ask[0] == 'y' || ask[0] == 'Y') {
-	//		printf("Please enter the contact's apartment number: ");
-	//		scanf("%d", &address->apartmentNumber);
-	//		ask[0] = 0;
-	//	}
-	//	else if (ask[0] == 'n' || ask[0] == 'N') {
-	//		ask[0] = 0;
-	//	}
-	//	else {
-	//		ask[0] = 1;
-	//	}
-	//} while (ask[0]);
 
 
 
@@ -158,87 +111,33 @@ void getAddress(struct Address *address) {
 //        mandatory (don't ask to enter the cell number)
 void getNumbers(struct Numbers* numbers) {
 
-	int ask;
+	int ask = 0;
 
 	printf("Please enter the contact's cell phone number: ");
 	scanf("%20s", numbers->cell);
+	clearKeyboard();
 
 	//home num
 	printf("Do you want to enter a home phone number? (y or n): ");
-	ask == yes();
+	//clearKeyboard();
+	ask = yes();
+
 	if (ask == 1) {
 		printf("Please enter the contact's home phone number: ");
 		scanf("%20s", numbers->home);
+		clearKeyboard();
 	}
 
 
 	//business num
-	printf("Do you want to enter a business number? (y or n): ");
-	ask == yes();
+	printf("Do you want to enter a business phone number? (y or n): ");
+	ask = yes();
 	if (ask == 1) {
 		printf("Please enter the contact's business phone number: ");
 		scanf("%20s", numbers->business);
+		clearKeyboard();
 	}
 }
-	//char ask[2] = { 0 };
-
-
-	/*ask[0] = 1;*/
-	//do {
-	//	printf("Do you want to enter a cell phone number? (y or n): ");
-	//	scanf("%1s", ask);
-
-	//	if (ask[0] == 'y' || ask[0] == 'Y') {
-
-	/*ask[0] = 0;*/
-	/*	}
-	else if (ask[0] == 'n' || ask[0] == 'N') {
-	ask[0] = 0;
-	}
-	else {
-	ask[0] = 1;
-	}
-	} while (ask[0]);*/
-
-
-//	ask[0] = 1;
-//	do {
-//		printf("Do you want to enter a home phone number? (y or n): ");
-//		scanf("%1s", ask);
-//
-//		if (ask[0] == 'y' || ask[0] == 'Y') {
-//			printf("Please enter the contact's home phone number: ");
-//			scanf("%20s", numbers->home);
-//			ask[0] = 0;
-//		}
-//		else if (ask[0] == 'n' || ask[0] == 'N') {
-//			ask[0] = 0;
-//		}
-//		else {
-//			ask[0] = 1;
-//		}
-//	} while (ask[0]);
-//
-//
-//
-//	ask[0] = 1;
-//	do {
-//		printf("Do you want to enter a business phone number? (y or n): ");
-//		scanf("%1s", ask);
-//
-//		if (ask[0] == 'y' || ask[0] == 'Y') {
-//			printf("Please enter the contact's business phone number: ");
-//			scanf("%20s", numbers->business);
-//			ask[0] = 0;
-//		}
-//		else if (ask[0] == 'n' || ask[0] == 'N') {
-//			ask[0] = 0;
-//		}
-//		else {
-//			ask[0] = 1;
-//		}
-//	} while (ask[0]);
-//}
 
 
 // +-------------------------------------------------+
