@@ -93,39 +93,73 @@ int getIntInRange(int min, int max)
 // yes: Empty function definition goes here:
 int yes(void)
 {
+	int result = -1;
+
+	char c1;
+	char c2[10];
+
+	do {
+
+		c2[0] = 0;
+		c2[1] = 0;
+
+		scanf("%[^\n]s", c2);
+		clearKeyboard();
+
+		if (c2[1] == 0) {
+			if (c2[0] == 'Y' || c2[0] == 'y') {
+				result = 1;
+			}
+			else {
+				result = 0;
+			}
+		}
+
+		if (result < 0) {
+			printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
+
+		}
+
+	} while (result < 0);
+
+	return result;
 
 
+	//x is value
+	//NL is new line
+	//nchar is new character
+	//'yes no' loop
+	//char NL = 'x';
+	//char nChar;
+	//int x = 0;
+	//int yesnoLoop = 1;
+	//int ls;
 
-	//int result = -1;
-
-	//char c1;
-	//char c2[10];
-
-	//do {
-
-	//	c2[0] = 0;
-	//	c2[1] = 0;
-
-	//	scanf("%[^\n]s", c2);
-	//	clearKeyboard();
-
-	//	if (c2[1] == 0) {
-	//		if (c2[0] == 'Y' || c2[0] == 'y') {
-	//			result = 1;
-	//		}
-	//		else {
-	//			result = 0;
-	//		}
-	//	}
-
-	//	if (result < 0) {
+	//while (yesnoLoop == 1) {
+	//	ls = scanf("%c%c", &nChar, &NL);
+	//	if (ls == 1 || ls == 0) {
 	//		printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
-
+	//	}
+	//	else if (NL != '\n') {
+	//		clearKeyboard();
+	//		printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
+	//	}
+	//	else if (nChar != 'Y' && nChar != 'y' && nChar != 'N' && nChar != 'n') {
+	//		clearKeyboard();
+	//		printf("*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: ");
+	//	}
+	//	else {
+	//		yesnoLoop = 0;
 	//	}
 
-	//} while (result < 0);
-
-	//return result;
+	//	if (nChar == 'y' || nChar == 'Y') {
+	//		x = 1;
+	//	} 
+	//	else if (nChar == 'n' || nChar == 'N') {
+	//		x = 0;
+	//	}
+	//	return x;
+	//}
 
 }
 
