@@ -50,16 +50,16 @@ void getName(struct Name *name) {
 	scanf("%30s", name->firstName);
 
 	//middlein
-	printf("Do you want to enter a middle initial(s)? (y or n): ");
+	printf("\nDo you want to enter a middle initial(s)? (y or n): ");
 	ask = yes();
 
 	if (ask == 1) {
-		printf("Please enter the contact's middle initial(s): ");
+		printf("\nPlease enter the contact's middle initial(s): ");
 		scanf("%6", name->middleInitial);
 	}
 
 	//lastn
-	printf("Please enter the contact's last name: ");
+	printf("\nPlease enter the contact's last name: ");
 	scanf("%35s", name->lastName);
 
 
@@ -112,19 +112,19 @@ void getAddress(struct Address *address) {
 	scanf("%40s", address->street);
 
 	//apartment num
-	printf("Do you want to enter an apartment number? (y or n): ");
+	printf("\nDo you want to enter an apartment number? (y or n): ");
 	ask = yes();
 	if (ask == 1) {
-		printf("Please enter the contact's apartment number: ");
+		printf("\nPlease enter the contact's apartment number: ");
 		address->apartmentNumber = getInt();
 	}
 
 	//postal 
-	printf("Please enter the contact's postal code: ");
+	printf("\nPlease enter the contact's postal code: ");
 	scanf(" %7[^\n]", address->postalCode);
 
 	//city
-	printf("Please enter the contact's city: ");
+	printf("\nPlease enter the contact's city: ");
 	scanf("%40s", address->city);
 }
 
